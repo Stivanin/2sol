@@ -26,7 +26,7 @@ class ProdutosController extends Controller
 
       $produtos -> create($request->all());
 
-      \Session::flash('mensagem_sucesso', 'Cliente cadastrado com sucesso!');
+      \Session::flash('mensagem_sucesso', 'Produto cadastrado com sucesso!');
       return redirect ('produtos');
 
     }
@@ -42,6 +42,7 @@ class ProdutosController extends Controller
     {
       $produtos = \App\produtos::findOrFail($id);
       $produtos->update($request->all());
+      \Session::flash('mensagem_sucesso', 'Produto atualizado com sucesso!');
       return redirect ('produtos');
     }
 
@@ -51,8 +52,8 @@ class ProdutosController extends Controller
 
       $produtos->delete();
 
-      \Session::flash('mensagem_sucesso', 'Cliente deletado com sucesso!');
-      
+      \Session::flash('mensagem_sucesso', 'Produto deletado com sucesso!');
+
       return redirect ('produtos');
     }
 }
