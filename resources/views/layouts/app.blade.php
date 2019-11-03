@@ -36,6 +36,11 @@
                         <li><a href="{{ url('/') }}">Home</a> </li>
                         @if (!Auth::guest())
                         <li><a href="{{ url('/produtos') }}"> Produto</a> </li>
+<<<<<<< Updated upstream
+=======
+                        <li><a href="{{ url('/clientes') }}"> Clientes</a> </li>
+                        <li><a href="{{ url('/funcionarios') }}"> Funcionários</a> </li>
+>>>>>>> Stashed changes
                         @endif
                     </ul>
 

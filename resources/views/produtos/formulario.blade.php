@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Informe abaixo as informações do novo produto
+                <div class="card-header">Informe abaixo os dados do novo produto
                     <a class="float-right" href="{{url('produtos') }}">Listagem Produtos</a>
                 </div>
 

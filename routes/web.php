@@ -27,5 +27,22 @@ Route::get('produtos/{produtos}/editar', 'ProdutosController@editar');
 Route::patch('produtos/{produtos}', 'ProdutosController@atualizar');
 Route::delete('produtos/{produtos}', 'ProdutosController@deletar');
 
+<<<<<<< Updated upstream
+=======
+Route::get('clientes', 'ClientesController@index');
+Route::get('clientes/novo', 'ClientesController@novo');
+Route::post('clientes/salvar', 'ClientesController@salvar');
+Route::get('clientes/{clientes}/editar', 'ClientesController@editar');
+Route::patch('clientes/{clientes}', 'ClientesController@atualizar');
+Route::delete('clientes/{clientes}', 'ClientesController@deletar');
+
+Route::get('funcionarios', 'FuncionariosController@index');
+Route::get('funcionarios/novo', 'FuncionariosController@novo');
+Route::post('funcionarios/salvar', 'FuncionariosController@salvar');
+Route::get('funcionarios/{funcionarios}/editar', 'FuncionariosController@editar');
+Route::patch('funcionarios/{funcionarios}', 'FuncionariosController@atualizar');
+Route::delete('funcionarios/{funcionarios}', 'FuncionariosController@deletar');
+
+>>>>>>> Stashed changes
 
 });
