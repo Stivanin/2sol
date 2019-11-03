@@ -27,5 +27,12 @@ Route::get('produtos/{produtos}/editar', 'ProdutosController@editar');
 Route::patch('produtos/{produtos}', 'ProdutosController@atualizar');
 Route::delete('produtos/{produtos}', 'ProdutosController@deletar');
 
+Route::get('clientes', 'ClientesController@index');
+Route::get('clientes/novo', 'ClientesController@novo');
+Route::post('clientes/salvar', 'ClientesController@salvar');
+Route::get('clientes/{clientes}/editar', 'ClientesController@editar');
+Route::patch('clientes/{clientes}', 'ClientesController@atualizar');
+Route::delete('clientes/{clientes}', 'ClientesController@deletar');
+
 
 });

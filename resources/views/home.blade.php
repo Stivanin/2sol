@@ -6,8 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Página Principal</div>
-                    Você está logado
                 <div class="card-body">
+                  Você está logado
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}

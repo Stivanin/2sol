@@ -36,6 +36,7 @@
                         <li><a href="{{ url('/') }}">Home</a> </li>
                         @if (!Auth::guest())
                         <li><a href="{{ url('/produtos') }}"> Produto</a> </li>
+                        <li><a href="{{ url('/clientes') }}"> Clientes</a> </li>
                         @endif
                     </ul>
 
