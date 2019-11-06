@@ -13,7 +13,7 @@
                         <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}} </div>
                 @endif
 
-                  <table class="table">
+                  <table class="table table-striped">
                     <th>Nome</th>
                     <th>Custo do Produto</th>
                     <th>Valor de Venda</th>
