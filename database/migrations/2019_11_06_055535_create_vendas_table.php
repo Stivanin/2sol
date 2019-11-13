@@ -21,6 +21,7 @@ class CreateVendasTable extends Migration
           $table->string('pagamento');
           $table->integer('parcelas')->nullable();
           $table->string('entrega');
+          $table->date('data');
           $table->timestamps();
         });
     }

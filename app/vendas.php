@@ -13,6 +13,7 @@ Class vendas extends Model{
     'pagamento',
     'parcelas',
     'entrega',
+    'data',
   ];
 }
  ?>

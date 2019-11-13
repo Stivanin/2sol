@@ -51,6 +51,11 @@ Route::delete('vendas/{vendas}', 'VendasController@deletar');
 Route::get('vendas/showNome', 'VendasController@showNome');
 Route::get('vendas/show', 'VendasController@showValor');
 
+Route::get('relatorios', 'RelatoriosController@index');
+Route::get('relatorios/vendas', 'RelatoriosController@vendas');
+Route::post('relatorios/vendas', 'RelatoriosController@gerar');
+Route::get('relatorios/gerar', 'RelatoriosController@gerar');
+
 Route::get('user/{email}', 'ShowProfile');
 
 });

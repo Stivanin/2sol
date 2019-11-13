@@ -11,17 +11,17 @@
                   <h3 class="card-title">Informações da Venda</h3>
                 </div>
                 <!-- /.card-header -->
-  
+
                 @if(Session::has('mensagem_sucesso'))
                   <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}} </div>
                 @endif
-  
+
                 @if(Request::is('*/editar'))
                     {!!Form::model($vendas, ['method' => 'PATCH', 'url' => 'vendas/'.$vendas->id]) !!}
                 @else
                     {!!Form::open(['url' => 'vendas/salvar']) !!}
                 @endif
-  
+
                 <!-- form start -->
                 {!!Form::open(['url' => 'vendas/salvar', 'method' => 'post']) !!}
                 <div class="card-body">
@@ -55,6 +55,10 @@
                       <div class="form-group">
                         <label class="col-form-label">Método de Entrega</label>
                         {!! Form::input('text', 'entrega', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                      <div class="form-group">
+                        <label class="col-form-label">Data da Venda</label>
+                        {!! Form::input('date', 'data', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
                       </div>
                     </div>
                   </div>

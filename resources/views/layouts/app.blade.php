@@ -39,6 +39,7 @@
                         <li><a href="{{ url('/clientes') }}"> Clientes</a> </li>
                         <li><a href="{{ url('/funcionarios') }}"> Funcionários</a> </li>
                         <li><a href="{{ url('/vendas') }}"> Vendas</a> </li>
+                        <li><a href="{{ url('/relatorios') }}"> Relatorios</a> </li>
                         @endif
                     </ul>
 

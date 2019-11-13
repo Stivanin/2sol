@@ -213,6 +213,11 @@ return [
                     'url'     => '/vendas/novo',
                     'icon'    => 'fas fa-plus',
                 ],
+                [
+                    'text' => 'Relatório',
+                    'url'  => '/relatorios/vendas',
+                    'icon' => 'fas  fa-sticky-note',
+                ],
             ],
         ],
         [
@@ -244,19 +249,6 @@ return [
             'text' => 'Mudar Senha',
             'url'  => 'password/reset',
             'icon' => 'fas fa-fw fa-lock',
-        ],
-        ['header' => 'Labels'],
-        [
-            'text'       => 'Importante',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Alerta',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Informação',
-            'icon_color' => 'aqua',
         ],
     ],
     /*
