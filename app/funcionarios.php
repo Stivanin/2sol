@@ -4,16 +4,21 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-Class funcionarios extends Model{
-
-  protected $fillable = [
-    'nome',
-    'sexo',
-    'nascimento',
-    'endereco',
-    'cpf',
-    'telefone',
-    'admissao'
-  ];
+class funcionarios extends Model
+{
+    protected $fillable = [
+        'nome',
+        'genero',
+        'data_nascimento',
+        'cpf',
+        'endereco',
+        'telefone',
+        'data_admissao',
+        'salario',
+        'data_demissao',
+        'estado',
+        
+      ];
 }
- ?>
+
+?>

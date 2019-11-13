@@ -8,7 +8,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">funcionarios</h3>
+            <h3 class="card-title">Crediário</h3>
             <div class="card-tools">
               <div class="input-group input-group-sm" style="width: 150px;">
                 <input id="busca" type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
@@ -20,33 +20,23 @@
             <table class="table table-hover" id="tabela">
               <thead>
                 <tr>
-                  <th>Nome</th>
-                  <th>Gênero</th>
-                  <th>Data de Nascimento</th>
-                  <th>Endereço</th>
-                  <th>Telefone</th>
-                  <th>Salário</th>
-                  <th>Data de Admissão</th>
-                  <th>Data de Demissão</th>
-                  <th>Estado</th>
+                  <th>Cliente</th>
+                  <th>Número de Parcelas</th>
+                  <th>Valor das Parcelas</th>
+                  <th>Vendedor</th>
                   <th> </th>
                 </tr>
               </thead>
               <tbody>
-                  @foreach ($funcionarios as $funcionarios)
+                  @foreach ($crediario as $crediario)
                   <tr>
-                      <td>{{$funcionarios->nome}}</td>
-                      <td>{{$funcionarios->genero}}</td>
-                      <td>{{$funcionarios->data_nascimento}}</td>
-                      <td>{{$funcionarios->endereco}}</td>
-                      <td>{{$funcionarios->telefone}}</td>
-                      <td>{{$funcionarios->salario}}</td>
-                      <td>{{$funcionarios->data_admissao}}</td>
-                      <td>{{$funcionarios->data_demissao}}</td>
-                      <td>{{$funcionarios->estado}}</td>
+                      <td>{{$crediario->cod_cliente}}</td>
+                      <td>{{$crediario->num_parcelas}}</td>
+                      <td>{{$crediario->valor_parcelas}}</td>
+                      <td>{{$crediario->vendedor}}</td>
                       <td>
-                        <a href="funcionarios/{{$funcionarios->id}}/editar" class="btn btn-primary"><i class="far fa-edit"></i></a>
-                        {!!Form::open(['method' => 'DELETE', 'url' => '/funcionarios/'.$funcionarios->id, 'style' => 'display:inline']) !!}
+                        <a href="crediario/{{$crediario->id}}/editar" class="btn btn-primary"><i class="far fa-edit"></i></a>
+                        {!!Form::open(['method' => 'DELETE', 'url' => '/crediario/'.$crediario->id, 'style' => 'display:inline']) !!}
                         <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         {!!Form::close() !!}
                       </td>

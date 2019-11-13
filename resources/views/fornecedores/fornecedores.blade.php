@@ -8,7 +8,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">funcionarios</h3>
+            <h3 class="card-title">fornecedores</h3>
             <div class="card-tools">
               <div class="input-group input-group-sm" style="width: 150px;">
                 <input id="busca" type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
@@ -20,33 +20,25 @@
             <table class="table table-hover" id="tabela">
               <thead>
                 <tr>
-                  <th>Nome</th>
-                  <th>Gênero</th>
-                  <th>Data de Nascimento</th>
+                  <th>Denominação Social</th>
+                  <th>CNPJ</th>
+                  <th>Email</th>
                   <th>Endereço</th>
                   <th>Telefone</th>
-                  <th>Salário</th>
-                  <th>Data de Admissão</th>
-                  <th>Data de Demissão</th>
-                  <th>Estado</th>
                   <th> </th>
                 </tr>
               </thead>
               <tbody>
-                  @foreach ($funcionarios as $funcionarios)
+                  @foreach ($fornecedores as $fornecedores)
                   <tr>
-                      <td>{{$funcionarios->nome}}</td>
-                      <td>{{$funcionarios->genero}}</td>
-                      <td>{{$funcionarios->data_nascimento}}</td>
-                      <td>{{$funcionarios->endereco}}</td>
-                      <td>{{$funcionarios->telefone}}</td>
-                      <td>{{$funcionarios->salario}}</td>
-                      <td>{{$funcionarios->data_admissao}}</td>
-                      <td>{{$funcionarios->data_demissao}}</td>
-                      <td>{{$funcionarios->estado}}</td>
+                      <td>{{$fornecedores->denominacao_social}}</td>
+                      <td>{{$fornecedores->cnpj}}</td>
+                      <td>{{$fornecedores->email}}</td>
+                      <td>{{$fornecedores->endereco}}</td>
+                      <td>{{$fornecedores->telefone}}</td>
                       <td>
-                        <a href="funcionarios/{{$funcionarios->id}}/editar" class="btn btn-primary"><i class="far fa-edit"></i></a>
-                        {!!Form::open(['method' => 'DELETE', 'url' => '/funcionarios/'.$funcionarios->id, 'style' => 'display:inline']) !!}
+                        <a href="fornecedores/{{$fornecedores->id}}/editar" class="btn btn-primary"><i class="far fa-edit"></i></a>
+                        {!!Form::open(['method' => 'DELETE', 'url' => '/fornecedores/'.$fornecedores->id, 'style' => 'display:inline']) !!}
                         <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                         {!!Form::close() !!}
                       </td>
