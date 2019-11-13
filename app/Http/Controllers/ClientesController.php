@@ -48,7 +48,7 @@ class ClientesController extends Controller
 
     public function deletar($id)
     {
-      $clientes = Clientes::findOrFail($id);
+      $clientes = clientes::findOrFail($id);
 
       $clientes->delete();
 
