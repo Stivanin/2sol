@@ -78,4 +78,10 @@ class VendasController extends Controller
       ->join('vendas', 'produtos.id', 'vendas.cod_produto')
       ->select('produtos.custo');
     }
+
+    public function totalVendas(){
+      $vendas = vendas::get();
+      $total = $vendas->count();
+      return $total;
+    }
 }
