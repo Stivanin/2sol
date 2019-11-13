@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt-br',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,6 @@ return [
     */
 
     'faker_locale' => 'en_US',
-
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -177,6 +176,8 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        //JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+
     ],
 
     /*

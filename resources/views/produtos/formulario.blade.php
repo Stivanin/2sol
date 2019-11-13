@@ -1,42 +1,61 @@
-@extends('layouts.app')
+{{-- resources/views/admin/dashboard.blade.php --}}
+
+@extends('adminlte::page')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Informe abaixo as informações do novo produto
-                    <a class="float-right" href="{{url('produtos') }}">Listagem Produtos</a>
+            <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Informações do Produto</h3>
                 </div>
-
+                <!-- /.card-header -->
+  
                 @if(Session::has('mensagem_sucesso'))
-                        <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}} </div>
+                  <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}} </div>
                 @endif
-
+  
                 @if(Request::is('*/editar'))
                     {!!Form::model($produtos, ['method' => 'PATCH', 'url' => 'produtos/'.$produtos->id]) !!}
                 @else
                     {!!Form::open(['url' => 'produtos/salvar']) !!}
                 @endif
-
+  
+                <!-- form start -->
                 {!!Form::open(['url' => 'produtos/salvar', 'method' => 'post']) !!}
-
-                <strong>{!!Form::label('nome','Nome') !!}</strong>
-                {!! Form::input('text', 'nome', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Nome do Produto']) !!} <br />
-
-                <strong>{!!Form::label('custo','Custo do Produto') !!}</strong>
-                {!! Form::input('float', 'custo', null, ['class' => 'form-control', '', 'placeholder' => 'Custo do Produto']) !!}<br />
-
-                <strong>{!!Form::label('valor','Valor de Venda do Produto') !!}</strong>
-                {!! Form::input('float', 'valor', null, ['class' => 'form-control', '', 'placeholder' => 'Valor do Produto']) !!}<br />
-
-                <strong>{!!Form::label('especificacao','Especificações do Produto') !!}</strong>
-                {!! Form::input('text', 'especificacao', null, ['class' => 'form-control', '', 'placeholder' => 'Especificações']) !!}<br />
-
-                {!! Form::submit('Cadastrar', ['class' => 'btn-primary']) !!}
+                <div class="card-body">
+                    <div class="form-group">
+                      <div class="input-group">
+                      <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                        <label class="col-form-label">Nome</label>
+                        {!! Form::input('text', 'nome', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Digite...']) !!} <br />
+                      </div>
+                        <!-- text input -->
+                        <div class="form-group">
+                        <label class="col-form-label">Custo</label>
+                        {!! Form::input('double', 'custo', null, ['class' => 'form-control', '','placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label class="col-form-label">Valor</label>
+                        {!! Form::input('double', 'valor', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                        <!-- text input -->
+                      <div class="form-group">
+                        <label class="col-form-label">Especificações</label>
+                        {!! Form::input('text', 'especificacao', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    {!! Form::submit('Cadastrar', ['class' => 'btn btn-success']) !!}
+                  </div>
                 {!!Form::close()!!}
-                </div>
-            </div>
+              </div>
         </div>
     </div>
 </div>

@@ -1,48 +1,70 @@
-@extends('layouts.app')
+{{-- resources/views/admin/dashboard.blade.php --}}
+
+@extends('adminlte::page')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Informe abaixo os dados da nova venda
-                    <a class="float-right" href="{{url('vendas') }}">Vendas Realizadas:</a>
+            <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Informações da Venda</h3>
                 </div>
-
+                <!-- /.card-header -->
+  
                 @if(Session::has('mensagem_sucesso'))
-                        <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}} </div>
+                  <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}} </div>
                 @endif
-
+  
                 @if(Request::is('*/editar'))
                     {!!Form::model($vendas, ['method' => 'PATCH', 'url' => 'vendas/'.$vendas->id]) !!}
                 @else
                     {!!Form::open(['url' => 'vendas/salvar']) !!}
                 @endif
-
+  
+                <!-- form start -->
                 {!!Form::open(['url' => 'vendas/salvar', 'method' => 'post']) !!}
-
-                <strong>{!!Form::label('cod_produto','Código do Produto') !!}</strong>
-                {!! Form::input('text', 'cod_produto', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Código do Produto']) !!} <br />
-
-                <strong>{!!Form::label('quantidade','Quantidade de Itens') !!}</strong>
-                {!! Form::input('integer', 'quantidade', null, ['class' => 'form-control', '', 'placeholder' => 'Quantidade de Itens']) !!}<br />
-
-                <strong>{!!Form::label('valor_venda','Valor Total da Venda') !!}</strong>
-                {!! Form::input('float', 'valor_venda', null, ['class' => 'form-control', '', 'placeholder' => 'Valor Total da Venda']) !!}<br />
-
-                <strong>{!!Form::label('pagamento','Método de Pagamento') !!}</strong>
-                {!! Form::input('text', 'pagamento', null, ['class' => 'form-control', '', 'placeholder' => 'Método de Pagamento']) !!}<br />
-
-                <strong>{!!Form::label('parcelas','Número de Parcelas') !!}</strong>
-                {!! Form::input('text', 'parcelas', null, ['class' => 'form-control', '', 'placeholder' => 'Número de Parcelas']) !!}<br />
-
-                <strong>{!!Form::label('entrega','Método de Entrega') !!}</strong>
-                {!! Form::input('text', 'entrega', null, ['class' => 'form-control', '', 'placeholder' => 'Método de Entrega']) !!}<br />
-
-                {!! Form::submit('Cadastrar', ['class' => 'btn-primary']) !!}
+                <div class="card-body">
+                    <div class="form-group">
+                      <div class="input-group">
+                      <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                        <label class="col-form-label">Código do Produto</label>
+                        {!! Form::input('text', 'cod_produto', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Digite...']) !!} <br />
+                      </div>
+                        <!-- text input -->
+                        <div class="form-group">
+                        <label class="col-form-label">Quantidade</label>
+                        {!! Form::input('number', 'quantidade', null, ['class' => 'form-control', '','placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label class="col-form-label">Valor Total da Venda</label>
+                        {!! Form::input('double', 'valor_venda', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                        <!-- text input -->
+                      <div class="form-group">
+                        <label class="col-form-label">Método de Pagamento</label>
+                        {!! Form::input('text', 'pagamento', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                      <div class="form-group">
+                        <label class="col-form-label">Número de Parcelas</label>
+                        {!! Form::input('text', 'parcelas', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                      <div class="form-group">
+                        <label class="col-form-label">Método de Entrega</label>
+                        {!! Form::input('text', 'entrega', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    {!! Form::submit('Cadastrar', ['class' => 'btn btn-success']) !!}
+                  </div>
                 {!!Form::close()!!}
-                </div>
-            </div>
+              </div>
+        </div>
         </div>
     </div>
 </div>
