@@ -1,48 +1,72 @@
-@extends('layouts.app')
+{{-- resources/views/admin/dashboard.blade.php --}}
+
+@extends('adminlte::page')
+
+
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Informe abaixo as informações do cliente
-                    <a class="float-right" href="{{url('clientes') }}">Listagem Clientes</a>
+            <div class="col-lg-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Informações do Cliente</h3>
+              </div>
+              <!-- /.card-header -->
+
+              @if(Session::has('mensagem_sucesso'))
+                <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}} </div>
+              @endif
+
+              @if(Request::is('*/editar'))
+                  {!!Form::model($clientes, ['method' => 'PATCH', 'url' => 'clientes/'.$clientes->id]) !!}
+              @else
+                  {!!Form::open(['url' => 'clientes/salvar']) !!}
+              @endif
+
+              <!-- form start -->
+              {!!Form::open(['url' => 'clientes/salvar', 'method' => 'post']) !!}
+              <div class="card-body">
+                  <div class="form-group">
+                    <div class="input-group">
+                    <div class="col-sm-12">
+                      <!-- text input -->
+                      <div class="form-group">
+                      <label class="col-form-label">Nome</label>
+                      {!! Form::input('text', 'nome', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Digite...']) !!} <br />
+                    </div>
+                      <div class="form-group">
+                        <div class="col-12">
+                            <label>Sexo</label>
+                        </div>
+                        {!! Form::select('sexo', array('masculino' => 'Masculino',
+                                                        'feminino' =>  'Feminino'), 
+                                                        ['class' => 'form-control']) !!}
+                      </div>
+                      <!-- text input -->
+                      <div class="form-group">
+                      <label class="col-form-label">Data de Nascimento</label>
+                      {!! Form::input('date', 'nascimento', null, ['class' => 'form-control', '']) !!}<br />
+                    </div>
+                    <!-- text input -->
+                    <div class="form-group">
+                      <label class="col-form-label">CPF</label>
+                      {!! Form::input('number', 'cpf', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                    </div>
+                      <!-- text input -->
+                    <div class="form-group">
+                      <label class="col-form-label">Endereço</label>
+                      {!! Form::input('text', 'endereco', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                    </div>
+                  </div>
                 </div>
-
-                @if(Session::has('mensagem_sucesso'))
-                        <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}} </div>
-                @endif
-
-                @if(Request::is('*/editar'))
-                    {!!Form::model($clientes, ['method' => 'PATCH', 'url' => 'clientes/'.$clientes->id]) !!}
-                @else
-                    {!!Form::open(['url' => 'clientes/salvar']) !!}
-                @endif
-
-                {!!Form::open(['url' => 'clientes/salvar', 'method' => 'post']) !!}
-
-                <strong>{!!Form::label('nome','Nome') !!}</strong>
-                {!! Form::input('text', 'nome', null, ['class' => 'form-control', 'autofocus', 'placeholder' => 'Nome do Cliente']) !!} <br />
-
-                <strong>{!!Form::label('sexo','Sexo do Cliente') !!}</strong><br />
-                  <input type="radio" name="sexo" value="Masculino"> Masculino<br />
-                  <input type="radio" name="sexo" value="Feminino"> Feminino<br />
-                  <input type="radio" name="sexo" value="Outros"> Outros<br /><br />
-
-                <strong>{!!Form::label('nascimento','Data de Nascimento do Cliente') !!}</strong>
-                {!! Form::input('text', 'nascimento', null, ['class' => 'form-control', '', 'placeholder' => 'DD/MM/AAAA']) !!}<br />
-
-                <strong>{!!Form::label('endereco','Endereço do Cliente') !!}</strong>
-                {!! Form::input('text', 'endereco', null, ['class' => 'form-control', '', 'placeholder' => 'Endereço do Cliente']) !!}<br />
-
-                <strong>{!!Form::label('cpf','CPF do Cliente') !!}</strong>
-                {!! Form::input('text', 'cpf', null, ['class' => 'form-control', '', 'placeholder' => '111.222.333-44']) !!}<br />
-
-                {!! Form::submit('Cadastrar', ['class' => 'btn-primary']) !!}
-                {!!Form::close()!!}
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  {!! Form::submit('Cadastrar', ['class' => 'btn btn-success']) !!}
                 </div>
+              {!!Form::close()!!}
             </div>
-        </div>
+            </div>
     </div>
 </div>
 @endsection

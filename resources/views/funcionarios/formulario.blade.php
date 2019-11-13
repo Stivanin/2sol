@@ -1,4 +1,6 @@
-@extends('layouts.app')
+{{-- resources/views/admin/dashboard.blade.php --}}
+
+@extends('adminlte::page')
 
 @section('content')
 <div class="container">
