@@ -39,19 +39,19 @@
                         <div class="col-12">
                             <label>Sexo</label>
                         </div>
-                        {!! Form::select('sexo', array('masculino' => 'Masculino',
-                                                        'feminino' =>  'Feminino'), 
+                        {!! Form::select('sexo', array('Masculino' => 'Masculino',
+                                                        'Feminino' =>  'Feminino'),
                                                         ['class' => 'form-control']) !!}
                       </div>
                       <!-- text input -->
                       <div class="form-group">
                       <label class="col-form-label">Data de Nascimento</label>
-                      {!! Form::input('date', 'nascimento', null, ['class' => 'form-control', '']) !!}<br />
+                      {!! Form::input('text', 'nascimento', null, ['class' => 'form-control', '']) !!}<br />
                     </div>
                     <!-- text input -->
                     <div class="form-group">
                       <label class="col-form-label">CPF</label>
-                      {!! Form::input('number', 'cpf', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
+                      {!! Form::input('text', 'cpf', null, ['class' => 'form-control', '', 'placeholder' => 'Digite...']) !!}<br />
                     </div>
                       <!-- text input -->
                     <div class="form-group">
