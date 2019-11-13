@@ -234,6 +234,44 @@ return [
                 ],
             ],
         ],
+        [
+            'text'        => 'Fornecedores',
+            'url'         => '/fornecedores',
+            'icon'        => 'fas fa-address-card',
+            'label'       => '',
+            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Listagem',
+                    'url'  => '/fornecedores',
+                    'icon' => 'fas fa-list',
+                ],
+                [
+                    'text'    => 'Cadastrar',
+                    'url'     => '/fornecedores/novo',
+                    'icon'    => 'fas fa-plus',
+                ],
+            ],
+        ],
+        [
+            'text'        => 'Crediário',
+            'url'         => '/crediario',
+            'icon'        => 'fas fa-address-card',
+            'label'       => '',
+            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Listagem',
+                    'url'  => '/crediario',
+                    'icon' => 'fas fa-list',
+                ],
+                [
+                    'text'    => 'Cadastrar',
+                    'url'     => '/crediario/novo',
+                    'icon'    => 'fas fa-plus',
+                ],
+            ],
+        ],
         ['header' => 'Configurações de Conta'],
         [
             'text' => 'Perfil',
