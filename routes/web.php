@@ -54,8 +54,27 @@ Route::get('vendas/show', 'VendasController@showValor');
 Route::get('relatorios', 'RelatoriosController@index');
 Route::get('relatorios/vendas', 'RelatoriosController@vendas');
 Route::post('relatorios/vendas', 'RelatoriosController@gerar');
-Route::get('relatorios/gerar', 'RelatoriosController@gerar');
+
+Route::get('fornecedores', 'FornecedoresController@index');
+Route::get('fornecedores/novo', 'FornecedoresController@novo');
+Route::post('fornecedores/salvar', 'FornecedoresController@salvar');
+Route::get('fornecedores/{fornecedores}/editar', 'FornecedoresController@editar');
+Route::patch('fornecedores/{fornecedores}', 'FornecedoresController@atualizar');
+Route::delete('fornecedores/{fornecedores}', 'FornecedoresController@deletar');
+
+Route::get('crediario', 'CrediarioController@index');
+Route::get('crediario/novo', 'CrediarioController@novo');
+Route::post('crediario/salvar', 'CrediarioController@salvar');
+Route::get('crediario/{crediario}/editar', 'CrediarioController@editar');
+Route::patch('crediario/{crediario}', 'CrediarioController@atualizar');
+Route::delete('crediario/{crediario}', 'CrediarioController@deletar');
+
+Route::get('relatorios', 'RelatoriosController@index');
+Route::get('relatorios/produtos', 'RelatoriosController@produtos');
+Route::post('relatorios/produtos', 'RelatoriosController@gerarProdutos');
 
 Route::get('user/{email}', 'ShowProfile');
+
+
 
 });
